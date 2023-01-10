@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33205.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharjahMuseumTask.Api", "SharjahMuseumTask.Api\SharjahMuseumTask.Api.csproj", "{48E75C76-7E92-478E-9F62-70D0337CEBE9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{48E75C76-7E92-478E-9F62-70D0337CEBE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48E75C76-7E92-478E-9F62-70D0337CEBE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48E75C76-7E92-478E-9F62-70D0337CEBE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48E75C76-7E92-478E-9F62-70D0337CEBE9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {14B9407A-C48F-4921-800B-223267C8AF41}
+	EndGlobalSection
+EndGlobal
