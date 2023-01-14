@@ -11,6 +11,7 @@
   <ItemGroup>
     <PackageReference Include="FakeItEasy" Version="7.3.1" />
     <PackageReference Include="FluentAssertions" Version="6.8.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="7.0.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.1.0" />
     <PackageReference Include="xunit" Version="2.4.1" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.3">
@@ -24,7 +25,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
+    <ProjectReference Include="..\SharjahMuseumTask.Api\SharjahMuseumTask.Api.csproj" />
+    <ProjectReference Include="..\SharjahMuseumTask.Core\SharjahMuseumTask.Core.csproj" />
   </ItemGroup>
 
 </Project>
