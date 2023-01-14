@@ -51,9 +51,9 @@ namespace SharjahMuseumTask.Api.Controllers
         [HttpPost]
         [Route("[controller]/[action]")]
         [Authorize(Roles = "ADMIN")]
-        public UpdateEmployeeResponse UpdateEmployee([FromBody] UpdateEmployeeRequest request)
+        public async Task<UpdateEmployeeResponse> UpdateEmployee([FromBody] UpdateEmployeeRequest request)
         {
-            var ret = _employeeService.UpdateOne(request.Employee);
+            var ret = await _employeeService.UpdateOne(request.Employee);
             var res = new UpdateEmployeeResponse
             {
                 DoneUpdate = ret,
@@ -70,6 +70,19 @@ namespace SharjahMuseumTask.Api.Controllers
             var res = new DeleteEmployeeResponse
             {
                 DoneDelete = ret,
+            };
+            return res;
+        }
+
+        [HttpPost]
+        [Route("[controller]/[action]")]
+        [Authorize(Roles = "ADMIN")]
+        public AddEmployeeResponse AddEmployee([FromBody] AddEmployeeRequest request)
+        {
+            var ret = _employeeService.AddOne(request.Employee);
+            var res = new AddEmployeeResponse
+            {
+                DoneAdding = ret,
             };
             return res;
         }

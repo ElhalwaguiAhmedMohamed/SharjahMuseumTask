@@ -12,7 +12,8 @@ namespace SharjahMuseumTask.Core.Interfaces
     {
         public IEnumerable<Employee> GetAll(GetAllEmployeesRequest request);
         public Employee GetById(int id);
-        public bool UpdateOne(Employee employee);
+        public Task<bool> UpdateOne(Employee employee);
         public bool DeleteOne(int id);
+        public bool AddOne(Employee employee);
     }
 }

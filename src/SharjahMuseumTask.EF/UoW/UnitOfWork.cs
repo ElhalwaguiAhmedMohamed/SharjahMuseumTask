@@ -17,6 +17,7 @@ namespace SharjahMuseumTask.EF.UoW
         public IBaseRepository<Device> Devices { get; private set; }
         public IBaseRepository<Role> Roles { get; private set; }
         public IBaseRepository<Employee> Employees { get; private set; }
+        public IBaseRepository<EmpAttendance> EmpAttendances { get; }
 
         public UnitOfWork(ApplicationDbContext context)
         {
@@ -25,6 +26,7 @@ namespace SharjahMuseumTask.EF.UoW
             Devices = new BaseRepository<Device>(_context!);
             Roles = new BaseRepository<Role>(_context!);
             Employees = new BaseRepository<Employee>(_context!);
+            EmpAttendances = new BaseRepository<EmpAttendance>(_context!);
         }
         public int Complete()
         {

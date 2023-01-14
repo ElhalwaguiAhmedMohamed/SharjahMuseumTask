@@ -160,9 +160,9 @@ namespace SharjahMuseumTask.EF.Repositories
             return entities;
         }
 
-        public T Update(T entity)
+        public T Update(T entity, int id)
         {
-            _context.Update(entity);
+            _context.Entry(entity).State = EntityState.Modified;
             return entity;
         }
 

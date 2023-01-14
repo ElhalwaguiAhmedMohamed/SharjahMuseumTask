@@ -14,6 +14,7 @@ namespace SharjahMuseumTask.Core.UoW
         IBaseRepository<Device> Devices { get; }
         IBaseRepository<Role> Roles { get; }
         IBaseRepository<Employee> Employees { get; }
+        IBaseRepository<EmpAttendance> EmpAttendances { get; }
         int Complete();
     }
 }

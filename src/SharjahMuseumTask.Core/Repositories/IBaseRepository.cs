@@ -29,7 +29,7 @@ namespace SharjahMuseumTask.Core.Repositories
         Task<T> AddAsync(T entity);
         IEnumerable<T> AddRange(IEnumerable<T> entities);
         Task<IEnumerable<T>> AddRangeAsync(IEnumerable<T> entities);
-        T Update(T entity);
+        T Update(T entity, int id);
         void Delete(T entity);
         void DeleteRange(IEnumerable<T> entities);
         void Attach(T entity);

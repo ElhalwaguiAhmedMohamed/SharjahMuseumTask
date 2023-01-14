@@ -28,13 +28,13 @@ namespace SharjahMuseumTask.Core.Services
             return _unitOfWork.Employees.GetById(id);
         }
 
-        public bool UpdateOne(Employee employee)
+        public async Task<bool> UpdateOne(Employee employee)
         {
-            var currentEmp = _unitOfWork.Employees.GetById(employee.EmpId);
+            var currentEmp = await _unitOfWork.Employees.GetByIdAsync(employee.EmpId);
             currentEmp.Email = employee.Email;
             currentEmp.Name = employee.Name;
             currentEmp.PhoneNumber = employee.PhoneNumber;
-            _unitOfWork.Employees.Update(employee);
+            //_unitOfWork.Employees.Update(employee, employee.EmpId);
             var count = _unitOfWork.Complete();
             if (count > 0) return true;
             return false;
@@ -46,6 +46,17 @@ namespace SharjahMuseumTask.Core.Services
             _unitOfWork.Employees.Delete(employee);
             var count = _unitOfWork.Complete();
             if (count > 0) return true;
+            return false;
+        }
+
+        public bool AddOne(Employee employee)
+        {
+            var addedEmployee = _unitOfWork.Employees.Add(employee);
+            if (addedEmployee != null)
+            {
+                _unitOfWork.Complete();
+                return true;
+            };
             return false;
         }
     }

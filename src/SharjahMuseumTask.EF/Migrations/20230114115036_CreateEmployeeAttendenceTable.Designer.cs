@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SharjahMuseumTask.EF;
 
@@ -11,9 +12,11 @@ using SharjahMuseumTask.EF;
 namespace SharjahMuseumTask.EF.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230114115036_CreateEmployeeAttendenceTable")]
+    partial class CreateEmployeeAttendenceTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -153,13 +156,13 @@ namespace SharjahMuseumTask.EF.Migrations
             modelBuilder.Entity("SharjahMuseumTask.Core.Models.EmpAttendance", b =>
                 {
                     b.HasOne("SharjahMuseumTask.Core.Models.Device", "Device")
-                        .WithMany()
+                        .WithMany("EmployeeAttendances")
                         .HasForeignKey("DevId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("SharjahMuseumTask.Core.Models.Employee", "Employee")
-                        .WithMany()
+                        .WithMany("EmployeeAttendances")
                         .HasForeignKey("EmpId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -178,6 +181,16 @@ namespace SharjahMuseumTask.EF.Migrations
                         .IsRequired();
 
                     b.Navigation("Role");
+                });
+
+            modelBuilder.Entity("SharjahMuseumTask.Core.Models.Device", b =>
+                {
+                    b.Navigation("EmployeeAttendances");
+                });
+
+            modelBuilder.Entity("SharjahMuseumTask.Core.Models.Employee", b =>
+                {
+                    b.Navigation("EmployeeAttendances");
                 });
 
             modelBuilder.Entity("SharjahMuseumTask.Core.Models.Role", b =>

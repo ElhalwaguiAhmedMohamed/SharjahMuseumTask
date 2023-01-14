@@ -25,13 +25,15 @@ namespace SharjahMuseumTask.Api.Controllers
         }
         [HttpPost]
         [Route("[controller]/[action]")]
-        public LoginResponse Login([FromBody] LoginRequest request)
+        public IActionResult Login([FromBody] LoginRequest request)
         {
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
             var issuer = _configuration["Jwt:Issuer"];
             var audience = _configuration["Jwt:Audience"];
-            return _userService.Login(request, credentials,issuer,audience);
+            var res =_userService.Login(request, credentials,issuer,audience);
+            if (res == null) return BadRequest("This user is not valid");
+            return Ok(res);
         }
 
     }

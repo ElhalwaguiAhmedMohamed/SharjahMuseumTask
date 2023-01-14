@@ -34,6 +34,7 @@ namespace SharjahMuseumTask.Api
                 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
                 builder.Services.AddScoped(typeof(IUserService), typeof(UserService));
                 builder.Services.AddScoped(typeof(IEmployeeService), typeof(EmployeeService));
+                builder.Services.AddScoped(typeof(IAttendanceService), typeof(AttendanceService));
                 // NLog: Setup NLog for Dependency injection
                 builder.Logging.ClearProviders();
                 builder.Host.UseNLog();
