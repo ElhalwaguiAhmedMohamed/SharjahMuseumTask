@@ -2,7 +2,7 @@
 THe task is to implement a simple employee crud operation and a report for their attendence and to expose an api to do said.
 Allowing admins to login with JWT tokens and to create, update, delete and retrieve eomployees.
 Allowing admins to get a report a specific employee attendence.
-
+Added unit tests for the controllers.
 ## Requirements
 - Create an employee setup screen and db table to make CRUD operations for “employees” table with columns “EMPID, Name, Email, PhoneNo”, And CRUD operations for
 - “EmployeeAttendance” with columns ”EVETLGUID, SRVDT, DEVDT, DEVUID, EMPID”
@@ -24,6 +24,11 @@ Allowing admins to get a report a specific employee attendence.
 - EF 7
 - SQL Server
 - Angular for front end ---> link to frontend repo (https://github.com/ElhalwaguiAhmedMohamed/SharjahMuseumTaskFrontend.git)
+
+## Tools used for testing 
+- Fake it easy
+- Xunit
+- Fluent Assertions
 
 ## How TO RUN
 - The application has some migrations to intiate the database you can use the command ```update-database``` to run the migrations and create the database. you will just need to change the connection string
