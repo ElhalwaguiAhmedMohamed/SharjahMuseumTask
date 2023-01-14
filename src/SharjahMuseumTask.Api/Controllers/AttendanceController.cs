@@ -27,9 +27,11 @@ namespace SharjahMuseumTask.Api.Controllers
         [Authorize(Roles = "ADMIN")]
         public GetAttendanceTableResponse GetAttendanceTable([FromBody] GetAttendanceTableRequest request)
         {
-            var ret = _attendanceService.GetAttendanceTable(request).ToList();
-            var res = new GetAttendanceTableResponse();
-            res.AttendanceTable.AddRange(ret);
+            var ret = _attendanceService.GetAttendanceTable(request);
+            var res = new GetAttendanceTableResponse
+            {
+                EmpAttendanceReport = ret
+            };
             return res;
         }
     }

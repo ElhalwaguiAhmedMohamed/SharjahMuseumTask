@@ -11,8 +11,8 @@ namespace SharjahMuseumTask.Core.DTOs.Responses
     {
         public GetAttendanceTableResponse()
         {
-            AttendanceTable = new List<EmpAttendance>() ;
+            EmpAttendanceReport = new EmpAttendanceReport() ;
         }
-        public List<EmpAttendance> AttendanceTable { get; set; }
+        public EmpAttendanceReport EmpAttendanceReport { get; set; }
     }
 }

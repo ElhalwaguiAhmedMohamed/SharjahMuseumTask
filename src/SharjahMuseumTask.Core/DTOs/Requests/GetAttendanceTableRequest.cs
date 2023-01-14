@@ -8,5 +8,6 @@ namespace SharjahMuseumTask.Core.DTOs.Requests
 {
     public class GetAttendanceTableRequest
     {
+        public int EmployeeId { get; set; }
     }
 }
