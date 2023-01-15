@@ -33,6 +33,6 @@ Added unit tests for the controllers.
 ## How TO RUN
 - The application has some migrations to intiate the database you can use the command ```update-database``` to run the migrations and create the database. you will just need to change the connection string
 of the database.
-
+- You can also check the provided postman collection provided with the solution
 ## Auhtor 
 [Mohamed Ahmed Elhalwagui](https://github.com/ElhalwaguiAhmedMohamed)
